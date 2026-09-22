@@ -116,17 +116,163 @@
             text-align: justify;
         }
 
-        .downloads-section {
-            background-color: rgba(0, 210, 255, 0.05);
-            padding: 20px;
+        .update-section {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            border: 1px solid rgba(0, 210, 255, 0.2);
+            padding: 25px;
             margin-top: 30px;
         }
-        
-        .downloads-section h3 {
-            color: var(--accent-color);
-            margin-top: 0;
+
+        .update-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .update-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--text-main);
+            flex-grow: 1;
+        }
+
+        .update-tag {
+            background-color: var(--accent-color);
+            color: #0f1115;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .update-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .update-intro {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .change-category h4 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .changelog-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .changelog-list li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            min-width: 95px;
+            text-align: center;
+        }
+
+        .badge.add {
+            background-color: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .badge.tweak {
+            background-color: rgba(241, 196, 15, 0.15);
+            color: #f1c40f;
+            border: 1px solid rgba(241, 196, 15, 0.3);
+        }
+
+        .badge.bugfix {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
+        .badge.adjustment {
+            background-color: rgba(52, 152, 219, 0.15);
+            color: #3498db;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .badge.removal {
+            background-color: rgba(149, 165, 166, 0.15);
+            color: #95a5a6;
+            border: 1px solid rgba(149, 165, 166, 0.3);
+        }
+
+        .badge.optimization {
+            background-color: rgba(155, 89, 182, 0.15);
+            color: #9b59b6;
+            border: 1px solid rgba(155, 89, 182, 0.3);
+        }
+
+        .badge.feature {
+            background-color: rgba(155, 89, 182, 0.15);
+            color: #9b59b6;
+            border: 1px solid rgba(155, 89, 182, 0.3);
+        }
+
+        .badge.suggestion {
+            background-color: rgba(230, 126, 34, 0.15);
+            color: #e67e22;
+            border: 1px solid rgba(230, 126, 34, 0.3);
+        }
+
+        .update-downloads {
+            background-color: rgba(0, 210, 255, 0.05);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .update-downloads p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .btn-download {
+            background-color: var(--accent-color);
+            color: #0f1115;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .btn-download:hover {
+            opacity: 0.85;
         }
 
         footer {
@@ -149,7 +295,7 @@
         </header>
 
         <main class="main-container">
-            <img src="Legacy_Page/legacy-cover.jpg" alt="Sonic 3 Legacy Edition Cover" class="cover-img">
+            <img src="legacy-cover.jpg" alt="Sonic 3 Legacy Edition Cover" class="cover-img">
             
             <div class="content-padding">
                 <h1>Sonic 3 Legacy Edition</h1>
@@ -160,11 +306,134 @@
                 <h2>About the Mod</h2>
                 <p>After the events of Sonic 3 & Knuckles, an uncertain peace falls over Angel Island while Dr. Eggman remains in an unknown location. In his absence, Metal Sonic has emerged following a final directive from his creator, evolving into his Neo form driven by an unbreakable loyalty. This new power has triggered a temporal distortion that fractures reality; as the Master Emerald is affected by this energy, it has amplified the chaos, dragging Sonic and his friends into unpredictable temporal extremes. Unlike in past events, this time the Master Emerald has reacted to the crisis, finally awakening the power of the Super Emeralds as the only hope to stabilize time. Experience this adventure, face the distortion, and stop Neo Metal Sonic before the history of Angel Island is lost forever.</p>
 
-                <div class="downloads-section">
-                    <h3>Downloads</h3>
-                    <p>Select a version to download directly from GitHub.</p>
-                    <p style="font-size: 0.9rem; text-align: left; font-style: italic; margin-top: 10px; margin-bottom: 0;">Public release repository coming soon. Download links will appear here.</p>
+                <h2>Updates & Changelog</h2>
+
+                <!-- NEXUS UPDATE -->
+                <div class="update-section">
+                    <div class="update-header">
+                        <span class="update-tag">Latest Version</span>
+                        <h3>Nexus Update (2512_25)</h3>
+                        <span class="update-date" data-date="2025-12-25T10:25:52">Added 25/12/2025, 10:25:52 a.m. (<span class="time-ago">Calculando...</span>)</span>
+                    </div>
+
+                    <p class="update-intro">Merry Christmas! I hope you have a wonderful time. I'm pleased to announce that the Nexus update for Legacy is now available. The mod has been progressing very slowly and was canceled twice during this time, even changing ownership, but we're back with a new update. I'd like to thank negagen_nb mods for their support with this update[cite: 15].</p>
+
+                    <div class="change-category">
+                        <h4>Changes & Improvements</h4>
+                        <ul class="changelog-list">
+                            <li><span class="badge optimization">Optimization</span> Compatibility was verified with Windows, Android, and macOS[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> The HUD is hidden in the results[cite: 15].</li>
+                            <li><span class="badge removal">Removal</span> The dependency on support for title cards was removed[cite: 15].</li>
+                            <li><span class="badge removal">Removal</span> The support dependency for the data select was removed[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> Intensity options were added for the dark effect of hcz2[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> Several layouts were corrected[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> The Spanish language was added at various points in the game[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> Several songs were changed[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> New sound options were added[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> Options were added to activate and deactivate various effects[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> The characters pack was partially reworked[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> An option has been added to exchange monitors for gifts[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> The levels were partially adjusted[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> An alternative image option is added to the main menu[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> The bosses were retouched[cite: 15].</li>
+                            <li><span class="badge bugfix">Bugfix</span> The abrupt palette change in the ending was corrected[cite: 15].</li>
+                            <li><span class="badge bugfix">Bugfix</span> A bug that broke part of the data select if no skins were selected was fixed[cite: 15].</li>
+                            <li><span class="badge bugfix">Bugfix</span> A colossal bug fix thanks to negagen_nb mods for the help[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> Knuckles changed his sprites to composite[cite: 15].</li>
+                            <li><span class="badge optimization">Optimization</span> The space in the mod was optimized[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> Easter eggs were added[cite: 15].</li>
+                        </ul>
+                    </div>
+
+                    <div class="update-downloads">
+                        <p>Download sonic_3_legacy_edition_nexus_update_rver.zip directly from GitHub[cite: 15].</p>
+                        <a href="#" class="btn-download">Download v2512_25</a>
+                    </div>
                 </div>
+
+                <!-- 0903_24A REWORKED VERSION -->
+                <div class="update-section">
+                    <div class="update-header">
+                        <span class="update-tag">Definitive Version</span>
+                        <h3>0903_24A (Includes Fixes 0503_24A & 0303_24A)</h3>
+                        <span class="update-date" data-date="2024-03-09T12:56:30">Added 9/3/2024, 12:56:30 p.m. (<span class="time-ago">Calculando...</span>)</span>
+                    </div>
+
+                    <p class="update-intro">Thanks for the bug reports, we are working on solving everything within our reach. This version focuses on reviewing some features of the mod, I hope you like it.</p>
+
+                    <div class="change-category">
+                        <h4>Changes & Improvements</h4>
+                        <ul class="changelog-list">
+                            <li><span class="badge bugfix">Bugfix</span> Fixed several collision bugs in mgz[cite: 15].</li>
+                            <li><span class="badge tweak">Tweak</span> Minor adjustments were made to mgz[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> A checkpoint was added before the major boss in aiz2 and mgz2[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> Adjustments were made to the aiz2 layout to make it faster[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> The name of hydrocity was corrected in the title cards thanks Shiro Paradox[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> The character sprites were separated from the mod, now it is an independent mod "project S3 Legacy character pack" included in the main download[cite: 15].</li>
+                            <li><span class="badge bugfix">Bugfix</span> A soft lock was fixed in cnz 1[cite: 15].</li>
+                            <li><span class="badge adjustment">Adjustment</span> Removed residual objects in cnz1 bottom path[cite: 15].</li>
+                            <li><span class="badge bugfix">Bugfix</span> soporte 69 error fixed[cite: 15].</li>
+                            <li><span class="badge tweak">Tweak</span> Work was done on fixing some layouts of the areas belonging to Sonic 3[cite: 15].</li>
+                            <li><span class="badge removal">Removal</span> Compatibility with ESU and ES was removed due to site rules[cite: 15].</li>
+                            <li><span class="badge removal">Removal</span> The need for several supports has been eliminated since the mod implements its own scripts that replace the need for some supports[cite: 15].</li>
+                            <li><span class="badge feature">Feature</span> New design and approach for hcz2[cite: 15].</li>
+                            <li><span class="badge tweak">Tweak</span> Arrangements in some music so that your ears don't burst[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> Adding some behaviors for bosses[cite: 15].</li>
+                            <li><span class="badge add">Addition</span> Compatibility with some ES hud, If you have any problem with this, let me know[cite: 15].</li>
+                            <li><span class="badge suggestion">Suggestion</span> Disable infinite lives to avoid issues with custom backgrounds and effects[cite: 15].</li>
+                        </ul>
+                    </div>
+
+                    <div class="update-downloads">
+                        <p>Download proyect_legacy_0903_24a.zip directly from GitHub[cite: 15].</p>
+                        <a href="#" class="btn-download">Download v0903_24A</a>
+                    </div>
+                </div>
+
+                <!-- TIME COLAPSE UPDATE (REWORKED) -->
+                <div class="update-section">
+                    <div class="update-header">
+                        <span class="update-tag">Version</span>
+                        <h3>Time Colapse Update (1707-23)</h3>
+                        <span class="update-date" data-date="2023-07-17T00:00:00">Added 17/07/2023 (<span class="time-ago">Calculando...</span>)</span>
+                    </div>
+
+                    <p class="update-intro">The mod is progressing slowly but still active.</p>
+
+                    <div class="change-category">
+                        <h4>Additions</h4>
+                        <ul class="changelog-list">
+                            <li><span class="badge add">Addition</span> New layouts and backgrounds.</li>
+                            <li><span class="badge add">Addition</span> Tails custom sprites.</li>
+                            <li><span class="badge add">Addition</span> Proto Knux sprites.</li>
+                            <li><span class="badge add">Addition</span> Goku & Vegeta lock-on features.</li>
+                            <li><span class="badge add">Addition</span> New data select options.</li>
+                            <li><span class="badge add">Addition</span> Speed shoes options (works with music mod).</li>
+                            <li><span class="badge add">Addition</span> Ring monitor custom sound (music mod).</li>
+                            <li><span class="badge add">Addition</span> New menu palette.</li>
+                            <li><span class="badge add">Addition</span> New final logo best ending.</li>
+                            <li><span class="badge add">Addition</span> New custom sprites.</li>
+                            <li><span class="badge add">Addition</span> Some new bosses.</li>
+                            <li><span class="badge add">Addition</span> Separate boss music adapted to the mod (my version).</li>
+                            <li><span class="badge add">Addition</span> An epic battle in Sky Sanctuary Act 1.</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-category">
+                        <h4>Tweaks</h4>
+                        <ul class="changelog-list">
+                            <li><span class="badge tweak">Tweak</span> Render hooks.</li>
+                            <li><span class="badge tweak">Tweak</span> Turquoise Coast Zone adjustments.</li>
+                            <li><span class="badge tweak">Tweak</span> Layout tweaks.</li>
+                        </ul>
+                    </div>
+
+                    <div class="update-downloads">
+                        <p>Download this specific version directly from GitHub.</p>
+                        <a href="#" class="btn-download">Download v1707-23</a>
+                    </div>
+                </div>
+
             </div>
         </main>
 
@@ -174,7 +443,44 @@
     </div>
 
     <script>
+        // Script inteligente para calcular tiempo transcurrido (días, meses o años automáticamente)
         document.addEventListener("DOMContentLoaded", () => {
+            const timeElements = document.querySelectorAll(".update-date[data-date]");
+            
+            timeElements.forEach(el => {
+                const targetDate = new Date(el.getAttribute("data-date"));
+                const now = new Date();
+                
+                const diffTime = Math.abs(now - targetDate);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                
+                let timeString = "";
+                
+                if (diffDays >= 365) {
+                    const years = (diffDays / 365).toFixed(1);
+                    // Si es un número entero exacto o quieres redondear limpio:
+                    const yearsRounded = Math.floor(diffDays / 365);
+                    const remainingMonths = Math.floor((diffDays % 365) / 30);
+                    
+                    if (remainingMonths > 0) {
+                        timeString = `hace ${yearsRounded} año${yearsRounded > 1 ? 's' : ''} y ${remainingMonths} mes${remainingMonths > 1 ? 'es' : ''}`;
+                    } else {
+                        timeString = `hace ${yearsRounded} año${yearsRounded > 1 ? 's' : ''}`;
+                    }
+                } else if (diffDays >= 30) {
+                    const months = Math.floor(diffDays / 30);
+                    timeString = `hace ${months} mes${months > 1 ? 'es' : ''}`;
+                } else {
+                    timeString = `hace ${diffDays} día${diffDays !== 1 ? 's' : ''}`;
+                }
+                
+                const span = el.querySelector(".time-ago");
+                if (span) {
+                    span.textContent = timeString;
+                }
+            });
+
+            // Animación de intro
             const frames = [
                 "Legacy_Page/Sonic_intro_4.png",
                 "Legacy_Page/Sonic_intro_5.png",
@@ -202,12 +508,10 @@
                     imgElement.src = frames[currentFrame];
                 } else {
                     clearInterval(animationTimer);
-
                     mainWrapper.style.opacity = "1";
 
                     setTimeout(() => {
                         overlay.style.opacity = "0";
-                        
                         setTimeout(() => {
                             overlay.style.display = "none";
                         }, 600);
