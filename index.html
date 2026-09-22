@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jultes' Mod Hub</title>
+    <title>Sonic 3 Legacy Edition - Jultes' Mod Hub</title>
     <style>
         :root {
             --bg-color: #0f1115;
-            --card-bg: #1a1d24;
-            --card-hover: #232731;
+            --content-bg: #1a1d24;
             --accent-color: #00d2ff;
             --text-main: #ffffff;
             --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.05);
         }
 
         body {
@@ -20,128 +20,142 @@
             color: var(--text-main);
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            line-height: 1.6;
         }
 
-        header {
-            text-align: center;
-            padding: 60px 20px 20px 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            background-color: var(--card-hover);
-            border-color: rgba(0, 210, 255, 0.3);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 160px;
-            background-color: #2a2f3a;
-            object-fit: cover;
-        }
-
-        .card-content {
+        .mini-header {
+            background-color: var(--content-bg);
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .mini-header a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
-        .card-title {
-            font-size: 1.25rem;
+        .main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: var(--content-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            padding-bottom: 40px;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .content-padding {
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
             margin: 0 0 10px 0;
             color: var(--text-main);
         }
 
-        .card-desc {
+        .subtitle {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 0 0 20px 0;
-            flex: 1;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
         }
 
-        .btn {
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            color: var(--text-main);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Área de descargas (Placeholder) */
+        .downloads-section {
+            background-color: rgba(0, 210, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            margin-top: 30px;
+        }
+        
+        .downloads-section h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .download-btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: #0f1115;
-            text-align: center;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
             transition: opacity 0.2s;
         }
-
-        .btn:hover {
+        
+        .download-btn:hover {
             opacity: 0.9;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
             color: var(--text-muted);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Jultes' Mod Hub</h1>
-        <p>Download center for my projects and modifications.</p>
+    <header class="mini-header">
+        <a href="index.html">&larr; Back to Mod Hub</a>
     </header>
 
-    <main class="container">
-        <!-- Test de Canal -->
-        <div class="card">
-            <div class="card-img" style="display: flex; align-items: center; justify-content: center; color: var(--text-muted);">[Mod Preview]</div>
-            <div class="card-content">
-                <h3 class="card-title">Sonic 3 Legacy Edition</h3>
-                <p class="card-desc">Complete game overhaul mod featuring time travel mechanics, custom tilemaps, and fresh experiences.</p>
-                <a href="#" class="btn">View Releases</a>
-            </div>
-        </div>
+    <main class="main-container">
+        <img src="legacy-cover.jpg" alt="Sonic 3 Legacy Edition Cover" class="cover-img">
+        
+        <div class="content-padding">
+            <h1>Sonic 3 Legacy Edition</h1>
+            <p class="subtitle">A complete game overhaul mod featuring new mechanics and a renovated campaign.</p>
 
-        <!------------------->
+            <hr>
+
+            <h2>About the Mod</h2>
+            <p>After the events of Sonic 3 & Knuckles, an uncertain peace falls over Angel Island while Dr. Eggman remains in an unknown location. In his absence, Metal Sonic has emerged following a final directive from his creator, evolving into his Neo form driven by an unbreakable loyalty. This new power has triggered a temporal distortion that fractures reality; as the Master Emerald is affected by this energy, it has amplified the chaos, dragging Sonic and his friends into unpredictable temporal extremes. Unlike in past events, this time the Master Emerald has reacted to the crisis, finally awakening the power of the Super Emeralds as the only hope to stabilize time. Experience this adventure, face the distortion, and stop Neo Metal Sonic before the history of Angel Island is lost forever.</p>
+
+            <div class="downloads-section">
+                <h3>Downloads</h3>
+                <p>Select a version to download directly from GitHub.</p>
+                
+
+                <p style="font-size: 0.9rem; text-align: left; font-style: italic; margin-top: 10px; margin-bottom: 0;">Public release repository coming soon. Download links will appear here.</p>
+
+            </div>
+
+        </div>
     </main>
 
     <footer>
