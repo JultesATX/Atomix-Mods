@@ -7,16 +7,22 @@
     <style>
         :root {
             --bg-color: #0f1115;
-            --content-bg: #1a1d24;
+            --content-bg: rgba(26, 29, 36, 0.88);
             --accent-color: #00d2ff;
             --text-main: #ffffff;
             --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.08);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
+            /* Ruta corregida apuntando a la subcarpeta Legacy_Page */
+            background-image: linear-gradient(rgba(15, 17, 21, 0.75), rgba(15, 17, 21, 0.75)), url('Legacy_Page/dataselect_bg_Angel_island4.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: var(--text-main);
             margin: 0;
             padding: 0;
@@ -55,6 +61,7 @@
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(5px);
         }
         
         .mini-header a {
@@ -73,6 +80,8 @@
             border: 1px solid var(--border-color);
             overflow: hidden;
             padding-bottom: 40px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .cover-img {
@@ -345,19 +354,17 @@
                         </ul>
                     </div>
 
-                    <div class="update-downloads">
-                        <p>Download sonic_3_legacy_edition_nexus_update_rver.zip directly from GitHub.</p>
-                        <a href="#" class="btn-download">Download v2512_25</a>
+                <div class="update-downloads" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                    <p style="margin: 0; font-weight: bold; text-align: center;">Downloads area:</p>
+                    <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                        <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Nexus-Update/Sonic.3.Legacy.Edition.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Main</a>
+                        <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Nexus-Update/S3.Legacy.characters.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Characters Pack</a>
+                        <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Nexus-Update/S3.Legacy.audio.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Audio Pack</a>
                     </div>
                 </div>
 
                 <!-- 0903_24A REWORKED VERSION -->
-                <div class="update-section">
-                    <div class="update-header">
-                        <span class="update-tag">Definitive Version</span>
-                        <h3>Reworked Update</h3>
-                        <span class="update-date" data-date="2024-03-09T12:56:30">Added 9/3/2024, 12:56:30 p.m. (<span class="time-ago">Calculando...</span>)</span>
-                    </div>
+
 
                     <p class="update-intro">Thanks for the bug reports, we are working on solving everything within our reach. This version focuses on reviewing some features of the mod, I hope you like it.</p>
 
@@ -384,9 +391,12 @@
                         </ul>
                     </div>
 
-                    <div class="update-downloads">
-                        <p>Download proyect_legacy_0903_24a.zip directly from GitHub.</p>
-                        <a href="#" class="btn-download">Download v0903_24A</a>
+                <div class="update-downloads" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                    <p style="margin: 0; font-weight: bold; text-align: center;">Downloads area:</p>
+                    <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                        <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Reworked-Update/Sonic.3.Legacy.Edition.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Main</a>
+                        <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Reworked-Update/S3.Legacy.characters.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Characters Pack</a>
+                        <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Reworked-Update/S3.Legacy.audio.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Audio Pack</a>
                     </div>
                 </div>
 
@@ -428,9 +438,11 @@
                         </ul>
                     </div>
 
-                    <div class="update-downloads">
-                        <p>Download this specific version directly from GitHub.</p>
-                        <a href="#" class="btn-download">Download v1707-23</a>
+                    <div class="update-downloads" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                        <p style="margin: 0; font-weight: bold; text-align: center;">Downloads area:</p>
+                        <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                            <a href="https://github.com/JultesATX/Sonic-3-Legacy-Edition/releases/download/Time-Collapse-Update/Sonic.3.Legacy.Edition.zip" class="btn-download" style="flex: 1; text-align: center;">Sonic 3 Legacy Edition Main</a>
+                        </div>
                     </div>
                 </div>
 
@@ -443,7 +455,7 @@
     </div>
 
     <script>
-        // Script inteligente para calcular tiempo transcurrido (días, meses o años automáticamente)
+        // Script inteligente para calcular tiempo transcurrido
         document.addEventListener("DOMContentLoaded", () => {
             const timeElements = document.querySelectorAll(".update-date[data-date]");
             
@@ -457,8 +469,6 @@
                 let timeString = "";
                 
                 if (diffDays >= 365) {
-                    const years = (diffDays / 365).toFixed(1);
-                    // Si es un número entero exacto o quieres redondear limpio:
                     const yearsRounded = Math.floor(diffDays / 365);
                     const remainingMonths = Math.floor((diffDays % 365) / 30);
                     
