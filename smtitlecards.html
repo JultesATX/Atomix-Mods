@@ -365,8 +365,22 @@ function string getCharacterResultsNameplate(u8 character)
         </footer>
     </div>
 
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Detectar si es un dispositivo móvil por el ancho de pantalla
+            const isMobile = window.innerWidth <= 768;
+
+            const overlay = document.getElementById("transition-overlay");
+            const sideImg = document.getElementById("transition-side");
+            const mainWrapper = document.getElementById("main-wrapper");
+
+            // Si es móvil, cargamos las versiones "E"
+            if (isMobile) {
+                overlay.style.backgroundImage = "url('SMTitlecards_Page/BackE.png')";
+                sideImg.src = "SMTitlecards_Page/BottomE.png";
+            }
+
+            // Resto de la lógica de animación...
             const timeElements = document.querySelectorAll(".update-date[data-date]");
             
             timeElements.forEach(el => {
@@ -399,10 +413,6 @@ function string getCharacterResultsNameplate(u8 character)
                     span.textContent = timeString;
                 }
             });
-
-            const overlay = document.getElementById("transition-overlay");
-            const sideImg = document.getElementById("transition-side");
-            const mainWrapper = document.getElementById("main-wrapper");
 
             setTimeout(() => {
                 sideImg.style.transform = "translate(0, 0)";
